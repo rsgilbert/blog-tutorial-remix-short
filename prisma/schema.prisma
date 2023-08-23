@@ -36,3 +36,14 @@ model Note {
   user   User   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   userId String
 }
+
+
+// create migration by running: npx prisma migrate dev --name "create post model"
+model Post {
+    slug String @id 
+    title String 
+    markdown String 
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+}
