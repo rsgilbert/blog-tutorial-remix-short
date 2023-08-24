@@ -13,7 +13,10 @@ export default function Posts() {
     const { posts } = useLoaderData<typeof loader>()
     return (
         <main>
-            <h1>Posts</h1>
+            <h1 className="">Posts</h1>
+            <Link to="admin" className="text-red-600 underline mx-3">
+                Admin
+            </Link>
             <ul>
                 {posts.map((post) => (
                     <li>
