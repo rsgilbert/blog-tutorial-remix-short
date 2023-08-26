@@ -41,7 +41,7 @@ model Note {
 // create migration by running: npx prisma migrate dev --name "create post model"
 model Post {
     slug String @id 
-    title String 
+    title String
     markdown String 
 
     createdAt DateTime @default(now())

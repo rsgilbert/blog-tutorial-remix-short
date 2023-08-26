@@ -1,8 +1,11 @@
+import { Post } from "@prisma/client"
 import { prisma } from "~/db.server"
 
-type Post = {
-    slug: string,
-    title: string 
+
+export async function createPost(
+    post: Pick<Post, 'slug' | 'title' | 'markdown'>
+    ) {
+    return prisma.post.create({ data: post })
 }
 
 export async function getPosts() : Promise<Post[]> {
